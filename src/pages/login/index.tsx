@@ -5,7 +5,7 @@ import CustomizedButton from "../../components/common/customizationMuiComponents
 import CustomizedTextField from "../../components/common/customizationMuiComponents/CustomizedTextField";
 
 import styles from './Login.module.css'
-import {USER_NAME_REGEXP} from "../../constant/comm";
+import {USER_NAME_REGEXP} from "../../constant/common";
 
 type LoginFormData = {
   username: string
