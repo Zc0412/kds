@@ -1,11 +1,16 @@
-import React from 'react';
+import React, {useMemo} from 'react';
+import {
+  useNavigate,
+  useLocation,
+} from "react-router-dom";
 import {Box, Container, Stack, Typography} from "@mui/material";
 import {useController, useForm} from 'react-hook-form';
-import CustomizedButton from "../../components/common/customizationMuiComponents/CustomizedButton";
-import CustomizedTextField from "../../components/common/customizationMuiComponents/CustomizedTextField";
+import CustomizedButton from "../../components/customizationMuiComponents/CustomizedButton";
+import CustomizedTextField from "../../components/customizationMuiComponents/CustomizedTextField";
 
 import styles from './Login.module.css'
 import {USER_NAME_REGEXP} from "../../constant/common";
+import {useAuth} from "../../hooks/useAuth";
 
 type LoginFormData = {
   username: string
@@ -14,6 +19,18 @@ type LoginFormData = {
 
 
 const Login: React.FC = () => {
+  let navigate = useNavigate();
+  let location = useLocation();
+  let auth = useAuth();
+  const navigatePathname = useMemo(() => {
+    const state = location.state as { from: string };
+
+    if (state && state.from) {
+      return state.from;
+    }
+
+    return '/admin/doing';
+  }, [location]);
 
   const {
     control,
@@ -26,7 +43,18 @@ const Login: React.FC = () => {
    * @param data
    */
   const onSubmit = handleSubmit((data) => {
-    console.log(data)
+    // 解构出username
+    let {username} = data
+
+    auth.signin(username, () => {
+      // Send them back to the page they tried to visit when they were
+      // redirected to the login page. Use { replace: true } so we don't create
+      // another entry in the history stack for the login page.  This means that
+      // when they get to the protected page and click the back button, they
+      // won't end up back on the login page, which is also really nice for the
+      // user experience.
+      navigate(navigatePathname, {replace: true});
+    });
   });
 
   /**
