@@ -1,13 +1,19 @@
 :root {
     --color: #52c7e0;
-    --bg-color: #30383C
+    --bg-color: #30383C;
+    --menu-padding: 12px 40px;
 }
 
-body {
+html, body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
 }
