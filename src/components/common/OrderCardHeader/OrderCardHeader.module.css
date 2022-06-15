@@ -1,0 +1,23 @@
+.order-card-header {
+    padding: 20px 12px;
+}
+
+.order-card-header-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+}
+
+.order-card-header-time {
+    color: #30383D;
+    font-weight: 300;
+}
+
+.order-card-header-remark {
+    padding-top: 12px;
+    color: #30383D;
+    font-size: 12px;
+    font-weight: 400;
+}
