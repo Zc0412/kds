@@ -5,8 +5,7 @@ const StyledChip = styled(Chip)(({theme}) => ({
   borderRadius: 2,
   backgroundColor: theme.palette.primary.main,
   fontWeight: 'bolder',
-  // fontSize: 12,
-  // height: 20,
+  fontSize: 12,
   color: '#FFF'
 }));
 
