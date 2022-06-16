@@ -1,7 +1,9 @@
 import React from 'react';
-import {Box, Stack} from "@mui/material";
+import {Stack} from "@mui/material";
+import classNames from "classnames/bind";
 import CustomizedChip from "../../customizationMuiComponents/CustomizedChip";
 import styles from './OrderCardHeader.module.css'
+import {OrderCardLevel} from "../../../types/orderCard";
 
 type OrderCardHeaderProps = {
   /**
@@ -24,21 +26,35 @@ type OrderCardHeaderProps = {
    * remark备注
    */
   remark?: string
-}
+} & OrderCardLevel
 
-const OrderCardHeader: React.FC<OrderCardHeaderProps> = ({pickUp = false, number, name, dateTime, remark}) => {
+const cx = classNames.bind(styles)
+const OrderCardHeader: React.FC<OrderCardHeaderProps> = (
+  {
+    pickUp = false,
+    number,
+    name,
+    dateTime,
+    remark,
+    level='low'
+  }
+) => {
+  const className = cx({
+    'order-card-header': true,
+    'order-card-header-level': level !== 'low'
+  })
   return (
-    <div className={styles['order-card-header']}>
+    <div className={className}>
       <div className={styles['order-card-header-title']}>
         <Stack direction='row' alignItems="center">
           {
             pickUp && <CustomizedChip label='Pick up' size="small" sx={{mr: 0.6}} />
           }
-          <Box>
+          <strong>
             <span>{number}</span>
             /
             <span>{name}</span>
-          </Box>
+          </strong>
         </Stack>
         <span className={styles['order-card-header-time']}>{dateTime}</span>
       </div>
