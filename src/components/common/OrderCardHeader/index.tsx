@@ -43,11 +43,7 @@ const OrderCardHeader: React.FC<OrderCardHeaderProps> = ({pickUp = false, number
         <span className={styles['order-card-header-time']}>{dateTime}</span>
       </div>
 
-      {remark && <div className={styles['order-card-header-remark']}>
-            <span>I'm allergic to peanuts. Please don't add
-            peanut butter.</span>
-
-      </div>}
+      {remark && <div className={styles['order-card-header-remark']}><span>{remark}</span></div>}
     </div>
   );
 };
