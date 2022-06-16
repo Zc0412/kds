@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import styles from "./OrderCardContent.module.css";
-import {OrderCardStatus} from "../../../types/typing";
+import {OrderCardStatus} from "../../../types/typings";
 
 
 type OrderCardContentWrapProps = {
