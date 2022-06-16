@@ -5,7 +5,7 @@ import CustomizedChip from "../../customizationMuiComponents/CustomizedChip";
 import doingWhite from "../../../assets/images/doing_white@2x.png";
 import doneWhite from "../../../assets/images/done_white@2x.png";
 import styles from "./OrderCardContent.module.css";
-import {OrderCardStatus} from "../../../types/typings";
+import {OrderCardStatus} from "../../../types/orderCard";
 
 type OrderCardContentChipProps = {} & OrderCardStatus
 const cx = classNames.bind(styles);

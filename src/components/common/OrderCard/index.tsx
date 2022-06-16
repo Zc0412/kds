@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './OrderCard.module.css'
-import {OrderCardLevel, OrderCardStatus} from "../../../types/typings";
+import {OrderCardLevel, OrderCardStatus} from "../../../types/orderCard";
 
 type OrderCardProps = {
   children?: React.ReactNode;

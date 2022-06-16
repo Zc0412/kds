@@ -3,7 +3,7 @@ import styles from "./OrderCardAction.module.css";
 import {Button} from "@mui/material";
 import finishedBlue from "../../../assets/images/finished_blue@2x.png";
 import finishedWhite from "../../../assets/images/finished_white@2x.png";
-import {OrderCardLevel} from "../../../types/typings";
+import {OrderCardLevel} from "../../../types/orderCard";
 
 type OrderCardActionProps = {
   disabled?: boolean
