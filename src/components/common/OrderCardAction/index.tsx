@@ -9,7 +9,7 @@ type OrderCardActionProps = {
   disabled?: boolean
 } & OrderCardLevel
 
-const OrderCardAction: React.FC<OrderCardActionProps> = ({level = 'high', disabled = false}) => {
+const OrderCardAction: React.FC<OrderCardActionProps> = ({level = 'low', disabled = false}) => {
   // 订单紧急程度返回的按钮颜色值
   const textColor = level === "low" ? '#30383D' : '#FFFFFF'
   // icon
