@@ -1,0 +1,52 @@
+.order-card-content {
+    flex: auto;
+    overflow-y: auto;
+    padding: 12px;
+}
+
+.order-card-content-low {
+    background-color: #E9EFF3;
+}
+
+.order-card-content-middle {
+    background-color: #FFE6A2;
+}
+
+.order-card-content-high {
+    background-color: #EA9595;
+}
+
+.order-content-dish {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+}
+
+.order-content-dish-done {
+    opacity: 0.5;
+}
+
+.order-content-dish-status {
+    height: 18px !important;
+    font-weight: unset !important;
+}
+
+.order-content-dish-status-doing {
+    background-color: #C7D3DB !important;
+}
+
+.order-content-dish-status-done {
+    background-color: #00B9B7 !important;
+}
+
+.order-content-dish-icon-doing {
+    width: 12px;
+    height: 10px;
+}
+
+.order-content-dish-icon-done {
+    width: 12px;
+    height: 10px;
+}
+
