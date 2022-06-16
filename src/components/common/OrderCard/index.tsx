@@ -1,16 +1,16 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './OrderCard.module.css'
-import {OrderCardLevel} from "../../../types/typing";
+import {OrderCardLevel, OrderCardStatus} from "../../../types/typing";
 
 type OrderCardProps = {
   children?: React.ReactNode;
-} & OrderCardLevel
+} & OrderCardLevel & OrderCardStatus
 
 let cx = classNames.bind(styles);
 
 
-const OrderCard: React.FC<OrderCardProps> = ({children, level = 'low'}) => {
+const OrderCard: React.FC<OrderCardProps> = ({children, level = 'low', status = 'doing'}) => {
   /**
    * level:low 12<下单时间
    * level:middle 12<=下单时间<15
@@ -21,8 +21,9 @@ const OrderCard: React.FC<OrderCardProps> = ({children, level = 'low'}) => {
     "order-card-low": level === 'low',
     "order-card-middle": level === 'middle',
     "order-card-high": level === 'high',
+    'order-card-all-done': status === 'done'
   })
-  console.log(className)
+
   return (
     <div className={className}>
       {children}

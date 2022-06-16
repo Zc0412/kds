@@ -9,6 +9,10 @@
     flex-direction: column;
 }
 
+.order-card-all-done{
+    opacity: 0.5;
+}
+
 .order-card-low{
     background-color: #FFFFFF;
 }
