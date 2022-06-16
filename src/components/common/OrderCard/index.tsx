@@ -1,11 +1,11 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './OrderCard.module.css'
+import {OrderCardLevel} from "../../../types/typing";
 
 type OrderCardProps = {
   children?: React.ReactNode;
-  level?: 'low' | 'middle' | 'high';
-}
+} & OrderCardLevel
 
 let cx = classNames.bind(styles);
 
