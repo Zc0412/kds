@@ -8,4 +8,11 @@
 }
 .main{
     flex: auto;
+    height: 100%;
+    padding-bottom: 12px;
+    display: flex;
+    flex-direction: row;
+    padding-left: 35px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
 }
