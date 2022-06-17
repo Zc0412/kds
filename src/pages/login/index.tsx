@@ -55,6 +55,7 @@ const Login: React.FC = () => {
       // user experience.
       navigate(navigatePathname, {replace: true});
     });
+    window.localStorage.setItem('authUser',username)
   });
 
   /**

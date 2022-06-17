@@ -10,8 +10,10 @@ type SettingProps = {}
 const Setting: React.FC<SettingProps> = () => {
   let navigate = useNavigate();
   let auth = useAuth()
+  console.log(auth)
   // 退出登录
   const logout = () => {
+    window.localStorage.clear()
     auth.signout(() => navigate("/"));
   }
   return (
@@ -25,6 +27,7 @@ const Setting: React.FC<SettingProps> = () => {
             <Typography variant='h5' sx={{fontWeight: 'bold'}} align='center'>
               GTYRO DELICIOUS
             </Typography>
+
             <CustomizedButton
               variant="contained"
               disableElevation
