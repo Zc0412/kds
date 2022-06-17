@@ -2,6 +2,7 @@ import React from 'react';
 import {Stack} from "@mui/material";
 import classNames from "classnames/bind";
 import CustomizedChip from "../../customizationMuiComponents/CustomizedChip";
+import {formatTime} from "../../../utils/common";
 import styles from './OrderCardHeader.module.css'
 import {OrderCardLevel} from "../../../types/orderCard";
 
@@ -36,13 +37,14 @@ const OrderCardHeader: React.FC<OrderCardHeaderProps> = (
     name,
     dateTime,
     remark,
-    level='low'
+    level = 'low'
   }
 ) => {
   const className = cx({
     'order-card-header': true,
     'order-card-header-level': level !== 'low'
   })
+  const orderTime = formatTime(dateTime)
   return (
     <div className={className}>
       <div className={styles['order-card-header-title']}>
@@ -56,7 +58,7 @@ const OrderCardHeader: React.FC<OrderCardHeaderProps> = (
             <span>{name}</span>
           </strong>
         </Stack>
-        <span className={styles['order-card-header-time']}>{dateTime}</span>
+        <span className={styles['order-card-header-time']}>{orderTime}</span>
       </div>
 
       {remark && <div className={styles['order-card-header-remark']}><span>{remark}</span></div>}
