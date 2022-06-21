@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {lazy, Suspense} from 'react';
 import ReactDOM from 'react-dom/client';
 import {
   BrowserRouter,
@@ -6,18 +6,17 @@ import {
   Route
 } from "react-router-dom";
 import './index.css';
-// import Index from './pages/home';
 import reportWebVitals from './reportWebVitals';
 import Login from "./pages/login";
 import NotFound from "./pages/notFound";
 import Setting from "./pages/admin/setting";
 import Doing from "./pages/admin/doing";
-import Done from "./pages/admin/done";
 import {ThemeProvider} from "@mui/material";
 import theme from "./theme";
-import RequireAuth from "./components/common/RequireAuth";
 import {AuthProvider} from "./hooks/useAuth";
-
+import Index from "./components/common/Loading";
+const Done = lazy(() => import('./pages/admin/done'))
+const RequireAuth = lazy(() => import('./components/common/RequireAuth'))
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -32,12 +31,16 @@ root.render(
             <Route path='/login' element={<Login />} />
             {/*嵌套路由*/}
             <Route path='/admin'>
-              <Route path='setting' element={<RequireAuth><Setting /></RequireAuth>} />
-              <Route path='doing' element={<RequireAuth><Doing /></RequireAuth>} />
-              <Route path='done' element={<RequireAuth><Done /></RequireAuth>} />
+              <Route path='setting'
+                     element={<Suspense fallback={<Index />}><RequireAuth><Setting /></RequireAuth> </Suspense>} />
+              <Route path='doing'
+                     element={<Suspense fallback={<Index />}><RequireAuth><Doing /></RequireAuth></Suspense>} />
+              <Route path='done'
+                     element={<Suspense fallback={<Index />}><RequireAuth><Done /></RequireAuth></Suspense>} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
+
         </BrowserRouter>
       </AuthProvider>
     </ThemeProvider>
