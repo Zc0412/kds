@@ -1,5 +1,5 @@
 .order-card {
-    min-width: 350px;
+    min-width: 280px;
     height: 100%;
     max-height: calc(100vh - 40px - 115px - 12px - 12px);
     margin-right: 18px;

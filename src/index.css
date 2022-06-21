@@ -4,9 +4,21 @@
     --menu-padding: 12px 40px;
 }
 
+@font-face {
+    font-family: HarmonyOSHans-Black;
+    font-weight: bold;
+    src: local('HarmonyOSHans-Medium'), url(./assets/fonts/HarmonyOSHans-Black.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: HarmonyOSHans-Regular;
+    font-weight: normal;
+    src: local('HarmonyOSHans-Regular'), url(./assets/fonts/HarmonyOSHans-Regular.woff2) format('woff2');
+}
+
 html, body {
     margin: 0;
-    font-family: PingFangSC-Regular, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    font-family: HarmonyOSHans-Regular, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
     -webkit-font-smoothing: antialiased;
