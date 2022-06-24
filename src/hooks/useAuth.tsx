@@ -1,5 +1,5 @@
 import React from "react";
-import {fakeAuthProvider} from "../utils/auth";
+import {authProvider} from "../utils/auth";
 
 interface AuthContextType {
   user: any;
@@ -14,14 +14,14 @@ function AuthProvider({children}: { children: React.ReactNode }) {
   let [user, setUser] = React.useState<string | null>(authUser);
 
   let signin = (newUser: string, callback: VoidFunction) => {
-    return fakeAuthProvider.signin(() => {
+    return authProvider.signin(() => {
       setUser(newUser);
       callback();
     });
   };
 
   let signout = (callback: VoidFunction) => {
-    return fakeAuthProvider.signout(() => {
+    return authProvider.signout(() => {
       setUser(null);
       callback();
     });

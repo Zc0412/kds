@@ -4,13 +4,11 @@ import {Container, Stack, Typography} from "@mui/material";
 import CustomizedButton from "../../../components/customizationMuiComponents/CustomizedButton";
 import {useAuth} from "../../../hooks/useAuth";
 import styles from './Setting.module.css'
-
 type SettingProps = {}
 
 const Setting: React.FC<SettingProps> = () => {
   let navigate = useNavigate();
   let auth = useAuth()
-  console.log(auth)
   // 退出登录
   const logout = () => {
     window.localStorage.clear()
@@ -37,6 +35,7 @@ const Setting: React.FC<SettingProps> = () => {
             >
               Log out
             </CustomizedButton>
+
           </Stack>
         </Container>
       </main>
